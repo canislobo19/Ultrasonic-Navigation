@@ -19,9 +19,11 @@ SoftwareSerial mySerial(10,11); // RX, TX
 
 int toggle_switch;
 
-const int smallvibration=175;
+//initialize vibration strength
+const int smallvibration=175;  //weaker vibration means obstacle is further away
 const int bigvibration=250;
 
+//setting distances in centimeters
 const int lower_limit=3;
 const int middle_limit=50;
 const int upper_limit=110;
@@ -30,6 +32,7 @@ long duration, distance, FrontSensor, RightSensor, FloorSensor;
 
 void setup()
 {
+  //initialize pins
   Serial.begin(9600);
   mySerial.begin (9600);
   pinMode(trigPin1, OUTPUT);
@@ -45,7 +48,7 @@ void setup()
 }
 
 void loop() {
-SonarSensor(trigPin1, echoPin1);
+SonarSensor(trigPin1, echoPin1);  //record distances
 FrontSensor = distance;
 
 SonarSensor(trigPin2, echoPin2);
@@ -54,7 +57,7 @@ RightSensor = distance;
 SonarSensor(trigPin3, echoPin3);
 FloorSensor = distance;
 
-toggle_switch = digitalRead(switch_mode);
+toggle_switch = digitalRead(switch_mode); //checks if user wants to hear the speakers or vibration discs
 
 if(toggle_switch == LOW)
   {
