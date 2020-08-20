@@ -1,4 +1,4 @@
-# Senior-Design-Project
+# Ultrasonic-Navigation
 Shoes that help blind people climb stairs and navigate around obstacles in their home.
 
 Ultrasonic sensors on the feet measure and relay the distance to an obstacle to a speaker on the wrist that
